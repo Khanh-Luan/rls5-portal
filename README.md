@@ -1,6 +1,7 @@
 # RLS5 — Royal Los Santos 5 (`D:\fivem-rp-dev`)
 
 Dự án máy chủ **RLS5 (Royal Los Santos 5)** chuẩn **FiveM (GTA V Roleplay)** được tổ chức để:
+
 1. **Dev & test logic backend + giao diện NUI ngay trên máy không cần cài GTA V** (`npm test` và `npm run preview`).
 2. **Chạy được trực tiếp trên FXServer thật** cho tester có GTA V vào test hoặc đẩy nguyên folder lên VPS.
 
@@ -42,6 +43,7 @@ npm run preview
 ```
 
 Sau đó mở trình duyệt vào:
+
 - `http://127.0.0.1:3000/` — Trang web Cổng thông tin Server (Tin tức, Trailer, Hướng dẫn Tester, Bảng xếp hạng & Ví tiền trực tiếp).
 - `http://127.0.0.1:3000/nui/` — Xem trước giao diện NUI HUD & Ví tiền trong game.
 
@@ -59,7 +61,7 @@ Repo đã có sẵn `.gitignore`, `tools/build-pages.js` và GitHub Actions `.gi
    ```
 2. Trên GitHub, vào **Settings → Pages → Source** chọn **GitHub Actions**.
 3. Workflow tự chạy `npm test` và `npm run build:pages`, sau đó cấp link sống 24/24 tại `https://<ten_github>.github.io/<ten_repo>/` (gồm cả trang chủ và `/nui/`).
-4. *(Lưu ý: GitHub Pages chỉ host phần Web; server game `FXServer` cho tester vào chơi vẫn cần chạy trên máy dev qua ZeroTier/Radmin hoặc VPS).*
+4. _(Lưu ý: GitHub Pages chỉ host phần Web; server game `FXServer` cho tester vào chơi vẫn cần chạy trên máy dev qua ZeroTier/Radmin hoặc VPS)._
 
 ## 3. Đưa lên FXServer thật cho Tester vào chơi
 
@@ -79,3 +81,11 @@ Repo đã có sẵn `.gitignore`, `tools/build-pages.js` và GitHub Actions `.gi
 - `/pay <id> <so_tien>` (client): Chuyển khoản ngân hàng cho người chơi khác.
 - `/setjob <id> <ma_nghe>` (console/admin): Đổi nghề (`unemployed`, `delivery`, `mechanic`, `police`).
 - `/addcash <id> <so_tien>` (console/admin): Cộng tiền mặt để test.
+
+# Để push project lên github
+
+# git add .
+
+# git commit -m "Update"
+
+# git push

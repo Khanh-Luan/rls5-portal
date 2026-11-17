@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RLS5 — Royal Los Santos 5 Roleplay</title>
+  <link rel="icon" type="image/png" href="./assets/rls5-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Roboto+Condensed:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Top Utility Bar -->
+  <div class="top-utility-bar">
+    <div class="container top-utility-inner">
+      <nav class="utility-links" aria-label="Liên kết phụ">
+        <a href="#about">Giới thiệu</a>
+        <a href="#guide" id="openGuideTop">Hướng dẫn</a>
+        <a href="./nui/" target="_blank" rel="noopener">NUI In-Game</a>
+      </nav>
+      <div class="social-icons" aria-label="Mạng xã hội">
+        <a href="#about" title="Facebook" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.1H7.7v3h2.5V21h3.3z"/></svg>
+        </a>
+        <a href="#about" title="TikTok" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19.3 6.7a4.8 4.8 0 0 1-3.1-3.1h-3v11.6a2.6 2.6 0 1 1-1.9-2.5V9.6a5.6 5.6 0 1 0 4.9 5.6V9.2a7.8 7.8 0 0 0 4.5 1.4V7.6c-.5 0-1-.3-1.4-.9z"/></svg>
+        </a>
+        <a href="#about" title="Discord" aria-label="Discord">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19.5 6.3A16 16 0 0 0 15.6 5l-.2.4a14 14 0 0 1 3.4 1.7 12.2 12.2 0 0 0-13.6 0A14 14 0 0 1 8.6 5.4L8.4 5a16 16 0 0 0-3.9 1.3C2 10 1.4 13.7 1.7 17.3a16.3 16.3 0 0 0 4.8 2.4l1-1.6a10.4 10.4 0 0 1-1.6-.8l.4-.3a11.6 11.6 0 0 0 11.4 0l.4.3c-.5.3-1 .6-1.6.8l1 1.6a16.3 16.3 0 0 0 4.8-2.4c.4-4.2-.7-7.8-2.8-11zM9.2 14.8c-.9 0-1.7-.8-1.7-1.9s.7-1.9 1.7-1.9c1 0 1.7.8 1.7 1.9 0 1-.8 1.9-1.7 1.9zm5.6 0c-.9 0-1.7-.8-1.7-1.9s.7-1.9 1.7-1.9c1 0 1.7.8 1.7 1.9 0 1-.7 1.9-1.7 1.9z"/></svg>
+        </a>
+        <a href="#media" title="YouTube" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9C2 8.9 2 12 2 12s0 3.1.4 4.8a2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9c.4-1.7.4-4.8.4-4.8s0-3.1-.4-4.8zM10 15.2V8.8l5.2 3.2-5.2 3.2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Main Navbar -->
+  <header class="page-header">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <img src="./assets/rls5-logo.png" alt="RLS5 Royal Los Santos 5 Logo" class="brand-logo-img" />
+        <div class="brand-text-wrap">
+          <span class="brand-text">RLS5</span>
+          <span class="brand-subtext">ROYAL LOS SANTOS 5</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a href="#top" class="nav-link active">TRANG CHỦ</a>
+        <a href="#news" class="nav-link">TIN TỨC</a>
+        <a href="#media" class="nav-link">MEDIA</a>
+        <button type="button" class="nav-link nav-btn" id="openWalletNavBtn">VÍ &amp; NHÂN VẬT</button>
+        <button type="button" class="nav-link nav-btn" id="openGuideNavBtn">HƯỚNG DẪN</button>
+      </nav>
+
+      <div class="nav-search-box">
+        <input
+          id="navSearchInput"
+          type="search"
+          placeholder="Tìm tin, nghề, ID..."
+          aria-label="Tìm kiếm"
+        />
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="section-introduce">
+      <div class="hero-aurora"></div>
+      <div class="hero-skyline" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">
+            <span class="title-primary">ROYAL LOS SANTOS 5</span>
+            <span class="title-accent">RLS5 ROLEPLAY</span>
+          </h1>
+          <p class="hero-desc">
+            Thành phố nhập vai GTA V <strong>Royal Los Santos 5 (RLS5)</strong> — hệ thống kinh tế cân bằng,
+            nghề nghiệp đa dạng và đồng bộ NUI thời gian thực dành cho cộng đồng Việt Nam.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="fivem://connect/127.0.0.1:30120" class="playbtn--primary" id="heroFivemPlayBtn">
+              MỞ FIVEM VÀO NGAY
+            </a>
+            <button type="button" class="pill-outline-btn" id="heroConnectBtn">
+              ⚙ Đổi IP / Hướng dẫn
+            </button>
+            <button type="button" class="hero-secondary-link" id="heroWalletBtn">
+              Mở Ví &amp; Chuyển Khoản →
+            </button>
+          </div>
+          <p class="hero-note">
+            Giao thức <code id="heroProtocolPreview">fivem://connect/127.0.0.1:30120</code> • Hỗ trợ OneSync 48 slot miễn phí
+          </p>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-value" id="statOnline">2</span>
+              <span class="stat-label">Đang kết nối (Dev)</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" id="statMaxSlots">48</span>
+              <span class="stat-label">Slot OneSync Miễn Phí</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" id="statJobs">4</span>
+              <span class="stat-label">Nghề Nghiệp Khởi Tạo</span>
+            </article>
+          </div>
+        </div>
+
+        <!-- Right Orbital CTA Ring (Signature GTA5VN element) -->
+        <div class="hero-right">
+          <div class="orbital-stage">
+            <div class="orbit-ring ring-outer">
+              <span class="orbit-dot dot-1"></span>
+              <span class="orbit-dot dot-2"></span>
+            </div>
+            <div class="orbit-ring ring-mid"></div>
+            <div class="orbit-ring ring-inner"></div>
+
+            <div class="orbit-core-card">
+              <img src="./assets/rls5-logo.png" alt="Logo RLS5" class="orbit-logo-img" />
+              <span class="server-pill" id="orbitServerBadge"><i class="pulse-dot"></i> CHẾ ĐỘ LOCALHOST</span>
+              <h2>Kết Nối Tester</h2>
+              <p class="orbit-sub" id="orbitTargetText">127.0.0.1:30120</p>
+              <a href="fivem://connect/127.0.0.1:30120" class="orbit-launch-btn" id="orbitFivemBtn">
+                ▶ Mở FiveM kết nối ngay
+              </a>
+              <button type="button" class="copy-ip-btn" id="copyIpBtn">
+                connect 127.0.0.1:30120
+              </button>
+              <div class="orbit-footer-links">
+                <button type="button" class="orbit-config-link" id="openServerConfigBtn">
+                  ⚙ Đổi IP / Tên miền
+                </button>
+                <a href="./nui/" target="_blank" rel="noopener" class="nui-preview-link">
+                  HUD NUI ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-divider"></div>
+
+    <!-- Trailer & Showcase Carousel -->
+    <section class="section-trailer" id="showcase">
+      <div class="container">
+        <h2 class="section-heading centered">TRAILER &amp; TÍNH NĂNG</h2>
+        <div class="trailer-carousel" id="trailerCarousel">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <div class="page-divider"></div>
+
+    <!-- Latest News + Sidebar (Guides & Live Top Rich Players) -->
+    <section class="post-section" id="news">
+      <div class="container post-layout">
+        <div class="news-column">
+          <div class="section-header-row">
+            <h2 class="section-heading">TIN TỨC &amp; CẬP NHẬT MỚI NHẤT</h2>
+            <button type="button" class="btn-more-dropdown" id="resetSearchBtn">
+              <span>Xem toàn bộ</span>
+              <span class="caret">▼</span>
+            </button>
+          </div>
+
+          <div class="news-grid" id="newsGrid">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+
+        <aside class="sidebar-column">
+          <div class="guide-banner hud-frame" id="guide">
+            <div class="guide-banner-overlay">
+              <h3>HƯỚNG DẪN THAM GIA</h3>
+              <p>Tester mở FiveM, nhấn <strong>F8</strong> và dán lệnh kết nối. Khi vào thành phố, nhấn <strong>F5</strong> để mở Ví &amp; Hồ sơ.</p>
+              <button type="button" class="angled-btn small" id="openGuideSidebarBtn">Xem hướng dẫn chi tiết +</button>
+            </div>
+          </div>
+
+          <div class="top-rich-box hud-frame-subtle">
+            <div class="top-rich-header">
+              <div>
+                <h3>TOP CÔNG DÂN TUẦN</h3>
+                <small>Dữ liệu trực tiếp từ <code>economy.js</code></small>
+              </div>
+              <button type="button" class="pill-outline-btn" id="openWalletSidebarBtn">Quản lý ví</button>
+            </div>
+            <ul class="leaderboard-list" id="leaderboardList">
+              <!-- Populated live from /api/state -->
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="page-divider"></div>
+
+    <!-- Latest Media Section -->
+    <section class="section-media" id="media">
+      <div class="container">
+        <div class="section-header-row">
+          <h2 class="section-heading">MEDIA &amp; PREVIEW MỚI NHẤT</h2>
+          <a href="./nui/" target="_blank" rel="noopener" class="btn-more-dropdown">
+            <span>Mở NUI Toàn Màn Hình</span>
+            <span class="caret">↗</span>
+          </a>
+        </div>
+
+        <div class="media-layout">
+          <div class="media-preview hud-frame" id="mediaPreviewBox">
+            <!-- Active preview card / iframe toggle -->
+          </div>
+          <div class="media-list" id="mediaList">
+            <!-- 3 horizontal cards with #a1b2cd corner ticks -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-divider"></div>
+
+    <!-- About Us -->
+    <section class="about-us" id="about">
+      <div class="container about-grid">
+        <div class="about-brand-col">
+          <img src="./assets/rls5-logo.png" alt="RLS5 Royal Los Santos 5 Crest" class="about-logo-img" />
+          <h2>ROYAL LOS SANTOS 5</h2>
+          <p>RLS5 • Thành phố nhập vai GTA V đẳng cấp tại Việt Nam</p>
+        </div>
+
+        <div class="about-text-col">
+          <h3>VỀ CHÚNG TÔI</h3>
+          <p>
+            <strong>RLS5 (Royal Los Santos 5)</strong> được xây dựng với định hướng kết hợp giữa mã nguồn server
+            FiveM chuẩn chỉnh (tách biệt rõ Client – Server – NUI – Database) và cổng thông tin web trực quan.
+            Đội ngũ phát triển có thể kiểm thử logic kinh tế, nghề nghiệp và giao diện ngay trên trình duyệt,
+            đồng thời đồng bộ trực tiếp với FXServer để tester trải nghiệm thực tế trong Grand Theft Auto V.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="#about">Thỏa thuận người dùng</a>
+        <a href="#about">Chính sách bảo mật</a>
+        <a href="#guide">Quy định máy chủ</a>
+      </div>
+      <div class="footer-right">
+        <p>RLS5 • Royal Los Santos 5 © 2026 • Không liên kết hoặc được Rockstar Games tài trợ. Thương hiệu thuộc chủ sở hữu tương ứng.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal: Ví & Quản lý Nhân vật (Kết nối trực tiếp API economy.js) -->
+  <div id="walletModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="walletModalTitle">
+    <div class="modal-box hud-frame">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">CỔNG DỮ LIỆU SERVER THỜI GIAN THỰC</span>
+          <h2 id="walletModalTitle">Ví Tiền &amp; Nghề Nghiệp Công Dân</h2>
+        </div>
+        <button type="button" class="modal-close" data-close-modal="walletModal" aria-label="Đóng">✕</button>
+      </div>
+
+      <div id="walletFeedback" class="feedback hidden"></div>
+
+      <div class="modal-toolbar">
+        <label class="inline-control">
+          <span>Chọn công dân:</span>
+          <select id="portalPlayerSelect"></select>
+        </label>
+        <div class="quick-create-wrap">
+          <input id="newPlayerNameInput" type="text" maxlength="32" placeholder="Tên công dân mới..." />
+          <button type="button" class="pill-outline-btn" id="createPlayerBtn">+ Tạo ID test</button>
+        </div>
+      </div>
+
+      <div class="wallet-stats-row">
+        <div class="w-stat">
+          <span>Nhân vật</span>
+          <strong id="wPlayerName">-</strong>
+          <small id="wPlayerId">ID: -</small>
+        </div>
+        <div class="w-stat">
+          <span>Nghề nghiệp</span>
+          <strong id="wJob">-</strong>
+          <small id="wSalary">Lương: $0</small>
+        </div>
+        <div class="w-stat green">
+          <span>Tiền mặt</span>
+          <strong id="wCash">$0</strong>
+          <small>Trong túi</small>
+        </div>
+        <div class="w-stat cyan">
+          <span>Ngân hàng</span>
+          <strong id="wBank">$0</strong>
+          <small>Tài khoản ATM</small>
+        </div>
+      </div>
+
+      <div class="wallet-split">
+        <form id="portalTransferForm" class="wallet-card">
+          <h3>Chuyển khoản ngân hàng</h3>
+          <label class="field">
+            <span>ID người nhận</span>
+            <input id="wTargetId" type="number" min="1" step="1" required />
+          </label>
+          <label class="field">
+            <span>Số tiền ($)</span>
+            <input id="wAmount" type="number" min="1" step="1" required placeholder="500" />
+          </label>
+          <label class="field">
+            <span>Nội dung</span>
+            <input id="wNote" type="text" maxlength="120" placeholder="Mua xe, trả tiền công..." />
+          </label>
+          <button type="submit" class="playbtn--primary full-w">XÁC NHẬN CHUYỂN TIỀN</button>
+
+          <div class="admin-test-actions">
+            <div class="job-row">
+              <select id="portalJobSelect"></select>
+              <button type="button" class="pill-outline-btn" id="portalSetJobBtn">Đổi nghề</button>
+            </div>
+            <div class="btn-row">
+              <button type="button" class="pill-outline-btn" id="portalAddCashBtn">+ $1,000 tiền mặt</button>
+              <button type="button" class="pill-outline-btn" id="portalSalaryBtn">Phát lương chu kỳ</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="wallet-card">
+          <h3>Lịch sử giao dịch</h3>
+          <ul id="wTxList" class="tx-list">
+            <li class="tx-empty">Chưa có giao dịch.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Hướng dẫn & Cấu hình IP/Tên miền kết nối FiveM -->
+  <div id="infoModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+    <div class="modal-box compact hud-frame">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow" id="infoModalEyebrow">THÔNG TIN MÁY CHỦ</span>
+          <h2 id="infoModalTitle">Hướng dẫn kết nối Tester</h2>
+        </div>
+        <button type="button" class="modal-close" data-close-modal="infoModal" aria-label="Đóng">✕</button>
+      </div>
+      <div id="infoModalBody" class="info-modal-body"></div>
+
+      <!-- Khối đổi nhanh IP / Tên miền / Mã Cfx.re (chỉ hiện khi mở Hướng dẫn kết nối) -->
+      <section id="connectConfigPanel" class="connect-config-panel hidden">
+        <div id="connectConfigFeedback" class="feedback hidden"></div>
+        <div id="localhostWarningBox" class="warning-banner hidden">
+          ⚠ Hiện đang trỏ về <strong>127.0.0.1</strong> (chỉ máy bạn mở được). Để tester từ xa vào chơi,
+          hãy nhập <strong>IP ZeroTier/Radmin VPN</strong>, <strong>IP VPS</strong>, tên miền (vd <code>play.rls5.vn:30120</code>) hoặc mã <code>cfx.re/join/...</code>.
+        </div>
+
+        <form id="connectConfigForm" class="connect-config-form">
+          <label class="field">
+            <span>Địa chỉ Server FiveM (IP:Port, Tên miền, hoặc link cfx.re/join/...)</span>
+            <input
+              id="serverAddressInput"
+              type="text"
+              placeholder="Ví dụ: 26.15.88.10:30120 hoặc play.rls5.vn:30120"
+              required
+            />
+          </label>
+          <div class="connect-action-row">
+            <button type="submit" class="playbtn--primary small-cta">LƯU &amp; CẬP NHẬT LINK</button>
+            <button type="button" class="pill-outline-btn" id="resetServerAddressBtn">Về mặc định file config</button>
+          </div>
+        </form>
+
+        <div class="generated-links-box">
+          <div class="gen-row">
+            <span>Link bấm mở FiveM:</span>
+            <a id="modalFivemLink" href="fivem://connect/127.0.0.1:30120" class="gen-link">fivem://connect/127.0.0.1:30120</a>
+          </div>
+          <div class="gen-row">
+            <span>Lệnh console F8:</span>
+            <code id="modalF8Cmd">connect 127.0.0.1:30120</code>
+          </div>
+          <p class="config-file-hint">
+            Để áp dụng vĩnh viễn cho mọi người khi đưa lên hosting, sửa dòng <code>address</code> trong
+            <code>portal-web/server-config.js</code>.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="./server-config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

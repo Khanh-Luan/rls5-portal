@@ -1,0 +1,8 @@
+node_modules/
+dist/
+fxserver/
+.env
+*.log
+server-data/cache/
+server-data/txData/
+server-data/server.local.cfg

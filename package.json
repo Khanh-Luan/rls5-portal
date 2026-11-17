@@ -1,0 +1,11 @@
+{
+  "name": "fivem-rp-dev",
+  "version": "1.0.0",
+  "description": "FiveM GTA V Roleplay starter project with real FXServer resource and local browser dev preview",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "preview": "node tools/dev-preview.js",
+    "build:pages": "node tools/build-pages.js"
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RP-Core In-Game NUI HUD &amp; Wallet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Roboto+Condensed:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HUD nhỏ gọn góc trên bên phải (hiển thị cả trong game lẫn browser preview) -->
+  <aside class="hud-widget hud-frame" aria-label="Player HUD">
+    <div class="hud-top">
+      <span class="hud-player" id="hudPlayerName">Công dân #1</span>
+      <span class="hud-job-badge" id="hudJob">Thất nghiệp</span>
+    </div>
+    <div class="hud-balances">
+      <div class="balance-chip cash">
+        <span class="chip-label">TIỀN MẶT</span>
+        <strong id="hudCash">$0</strong>
+      </div>
+      <div class="balance-chip bank">
+        <span class="chip-label">NGÂN HÀNG</span>
+        <strong id="hudBank">$0</strong>
+      </div>
+    </div>
+    <div class="hud-hint">Nhấn <kbd>F5</kbd> hoặc <code>/rphud</code> để mở bảng Ví</div>
+  </aside>
+
+  <!-- Bảng chính (mở khi bấm F5 trong game, hoặc luôn mở trong Browser Preview) -->
+  <main id="rpPanel" class="panel-shell hidden">
+    <section class="panel-card hud-frame">
+      <header class="panel-header">
+        <div class="panel-brand-row">
+          <img src="rls5-logo.png" alt="RLS5 Logo" class="nui-logo-img" />
+          <div>
+            <p class="eyebrow">RLS5 • ROYAL LOS SANTOS 5 • IN-GAME NUI</p>
+            <h1>Ví Tiền &amp; Hồ Sơ Nghề Nghiệp</h1>
+          </div>
+        </div>
+        <button id="closeBtn" class="icon-btn" type="button" title="Đóng (ESC)">✕</button>
+      </header>
+
+      <div id="feedbackBanner" class="feedback hidden" role="status"></div>
+
+      <div class="stats-grid">
+        <article class="stat-box">
+          <span class="stat-label">Nhân vật</span>
+          <strong id="panelName">-</strong>
+          <small id="panelId">ID: -</small>
+        </article>
+        <article class="stat-box">
+          <span class="stat-label">Nghề hiện tại</span>
+          <strong id="panelJob">-</strong>
+          <small id="panelSalary">Lương: $0 / chu kỳ</small>
+        </article>
+        <article class="stat-box accent-green">
+          <span class="stat-label">Tiền mặt</span>
+          <strong id="panelCash">$0</strong>
+          <small>Dùng trực tiếp</small>
+        </article>
+        <article class="stat-box accent-blue">
+          <span class="stat-label">Ngân hàng</span>
+          <strong id="panelBank">$0</strong>
+          <small>Chuyển khoản &amp; nhận lương</small>
+        </article>
+      </div>
+
+      <div class="content-split">
+        <form id="transferForm" class="card-section hud-frame-subtle">
+          <h2>Chuyển khoản ngân hàng</h2>
+          <label class="field">
+            <span>ID người nhận</span>
+            <input id="targetIdInput" type="number" min="1" step="1" placeholder="Ví dụ: 2" required />
+          </label>
+          <label class="field">
+            <span>Số tiền ($)</span>
+            <input id="amountInput" type="number" min="1" step="1" placeholder="Ví dụ: 500" required />
+          </label>
+          <label class="field">
+            <span>Nội dung</span>
+            <input id="noteInput" type="text" maxlength="120" placeholder="Trả tiền sửa xe, mua đồ..." />
+          </label>
+          <button class="primary-btn" type="submit">GỬI TIỀN NGAY</button>
+        </form>
+
+        <section class="card-section hud-frame-subtle">
+          <h2>Lịch sử giao dịch gần đây</h2>
+          <ul id="txList" class="tx-list">
+            <li class="tx-empty">Chưa có giao dịch nào.</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Chỉ hiển thị khi mở trên trình duyệt Dev Preview (ẩn hoàn toàn trong FiveM GTA V) -->
+      <section id="devToolsBar" class="dev-toolbar hidden">
+        <div class="dev-header">
+          <span class="dev-badge">BROWSER NUI PREVIEW (Không cần GTA V)</span>
+          <a href="../" class="dev-portal-link">← Quay lại Cổng Web Server</a>
+        </div>
+        <div class="dev-actions">
+          <label class="inline-field">
+            <span>Đang xem ID:</span>
+            <select id="devPlayerSelect"></select>
+          </label>
+          <label class="inline-field">
+            <span>Đổi nghề:</span>
+            <select id="devJobSelect"></select>
+          </label>
+          <button id="devApplyJobBtn" class="secondary-btn" type="button">Áp dụng nghề</button>
+          <button id="devAddCashBtn" class="secondary-btn" type="button">+ $1,000 tiền mặt</button>
+          <button id="devPaySalaryBtn" class="secondary-btn" type="button">Phát lương ngay</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
